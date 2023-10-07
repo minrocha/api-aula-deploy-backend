@@ -1,8 +1,17 @@
 require('dotenv').config();
 const express = require('express');
 const knex = require('./conexao');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
+
+app.use(
+  cors({
+    // origin: //dominio ou array de dominios
+  })
+);
 
 app.use(express.json());
 
